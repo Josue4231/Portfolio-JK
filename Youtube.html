@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube — Recherche</title>
+<link rel="icon" href="img/youtube_3670147.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0a0a;
+  --bg-2: #111111;
+  --bg-3: #1a1a1a;
+  --border: #2a2a2a;
+  --border-2: #3a3a3a;
+  --white: #f5f5f5;
+  --grey-1: #c8c8c8;
+  --grey-2: #8a8a8a;
+  --grey-3: #555555;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+header {
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  font-size: 0.85rem;
+  color: var(--grey-2);
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+nav a:hover {
+  color: var(--white);
+  border-color: var(--border-2);
+}
+
+.google-link { display: flex; gap: 1px; }
+.g  { color: #e8e8e8; font-weight: 600; }
+.a  { color: #c8c8c8; font-weight: 600; }
+.oe { color: #aaa;    font-weight: 600; }
+.ga { color: #8a8a8a; font-weight: 600; }
+.l  { color: #6a6a6a; font-weight: 600; }
+.e  { color: #888;    font-weight: 600; }
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.yt-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.yt-icon {
+  width: 52px; height: 52px;
+  background: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: var(--white);
+  line-height: 1;
+}
+
+.form {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-2);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form:focus-within {
+  border-color: var(--border-2);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.04);
+}
+
+.form input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem 1.5rem;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.form input::placeholder { color: var(--grey-3); }
+
+.form button {
+  background: var(--bg-3);
+  border: none;
+  border-left: 1px solid var(--border);
+  padding: 0.9rem 1.5rem;
+  color: var(--grey-1);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.form button:hover {
+  background: #222;
+  color: var(--white);
+}
+
+.quick-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.quick-links a {
+  font-size: 0.8rem;
+  color: var(--grey-3);
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: all 0.2s;
+}
+.quick-links a:hover {
+  color: var(--white);
+  border-color: var(--border-2);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="google.html" class="google-link">
+          <span class="g">G</span><span class="a">o</span><span class="oe">o</span><span class="ga">g</span><span class="l">l</span><span class="e">e</span>
+        </a>
+      </li>
+      <li><a href="https://mail.google.com/mail/u/0/?pli=1#inbox" target="_blank">Gmail</a></li>
+      <li><a href="https://www.google.com/imghp?hl=fr&tab=ri&og" target="_blank">Images</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="main">
+  <div class="yt-logo">
+    <div class="yt-icon">▶</div>
+    <h1>YouTube</h1>
+  </div>
+
+  <form action="https://www.youtube.com/results?" method="get" target="_blank" class="form">
+    <input placeholder="Rechercher une vidéo…" type="text" name="search_query" required>
+    <button type="submit">Recherche</button>
+  </form>
+
+  <div class="quick-links">
+    <a href="index.html">← Portfolio</a>
+    <a href="google.html">Google</a>
+  </div>
+</div>
+
+</body>
+</html>

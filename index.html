@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Josué Kialengela - Développement web, projets et objectifs professionnels.">
+    <meta name="author" content="Josué Kialengela">
+    <meta name="keywords" content="Portfolio, Développement web, Angular, HTML, CSS, Projets, Josué Kialengela">
+    <title>Josué Kialengela — Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="logo">JK</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="#About">À propos</a></li>
+                <li><a href="#Skill-code">Compétences</a></li>
+                <li><a href="#Parcour">Parcours</a></li>
+                <li><a href="#Projects">Projets</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li><a href="futur.html" class="nav-cta" target="_blank">Mon avenir →</a></li>
+                <li><a href="Connection.html" class="nav-cta" target="_blank">Veille technologique →</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">Disponible pour alternance Bac+3</div>
+            <h1 class="hero-title">
+                <span class="hero-line">Je suis</span>
+                <span class="hero-line hero-name">Josué<em> Kialengela</em></span>
+                <span class="hero-line">Full Stack Dev.</span>
+            </h1>
+            <p class="hero-sub">Étudiant BTS SIO SLAM · Passionné par le front-end, le design et les applications web modernes.</p>
+            <div class="hero-actions">
+                <a href="https://www.linkedin.com/in/josu%C3%A9-kialengela-tazi/" class="btn btn-outline" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Josue4231" class="btn btn-outline" target="_blank">GitHub</a>
+                <a href="#Contact" class="btn btn-solid">Me contacter</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-img-wrap">
+                <img src="img/Portrait professionnel souriant en entreprise.png" alt="Photo de Josué">
+                <div class="hero-img-badge">BTS SIO SLAM</div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="About">
+        <div class="container">
+            <div class="section-label">01 — À propos</div>
+            <div class="about-grid">
+                <div class="about-heading">
+                    <h2>Construire des <em>expériences</em> qui ont du sens.</h2>
+                </div>
+                <div class="about-body">
+                    <p>Je m'appelle <strong>Josué Kialengela-Tazi</strong>, étudiant en <strong>2ᵉ année de BTS SIO</strong>, option <strong>SLAM</strong>. Passionné par le développement web et mobile, j'aime concevoir des interfaces intuitives et performantes.</p>
+                    <p>Je maîtrise <strong>HTML, CSS, JavaScript, PHP, Python, Kotlin, SQL</strong> et je suis toujours motivé à relever de nouveaux défis techniques.</p>
+                    <p>Actuellement à la recherche d'une <strong>alternance en Bac+3</strong>, avec une préférence pour le <strong>front-end</strong> et l'UX/UI design.</p>
+                    <div class="about-actions">
+                        <a href="img/Alternance 3.0.pdf" class="btn btn-solid" target="_blank">CV Alternance</a>
+                        <a href="img/CL_2025-12-21_Josué_KIALENGELA-TAZI 2.pdf" class="btn btn-outline" target="_blank">Lettre de motivation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="Skill-code">
+        <div class="container">
+            <div class="section-label">02 — Compétences</div>
+            <h2 class="section-title">Langages & Frameworks</h2>
+            <div class="skills-category">
+                <h3 class="skills-cat-title">Langages</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><img src="img/html5_16183594.png" alt="HTML5"><span>HTML5</span></div>
+                    <div class="skill-card"><img src="img/css_919826.png" alt="CSS3"><span>CSS3</span></div>
+                    <div class="skill-card"><img src="img/js_5968292.png" alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="skill-card"><img src="img/python_5968350.png" alt="Python"><span>Python</span></div>
+                    <div class="skill-card"><img src="img/programing_15484314.png" alt="PHP"><span>PHP</span></div>
+                    <div class="skill-card"><img src="img/KOt.png" alt="Kotlin"><span>Kotlin</span></div>
+                </div>
+            </div>
+            <div class="skills-category">
+                <h3 class="skills-cat-title">Frameworks / Librairies</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><img src="img/Angular (2).png" alt="Angular"><span>Angular</span></div>
+                    <div class="skill-card"><img src="img/react-js-icon.png" alt="React.js"><span>React.js</span></div>
+                    <div class="skill-card"><img src="img/boostrap.png" alt="Bootstrap"><span>Bootstrap</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Skill-db">
+        <div class="container">
+            <h2 class="section-title">Bases de données</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><img src="img/cfa2af18-ecdf-4ba8-b85b-c113fbe6176c.jpg" alt="SQL"><span>SQL</span></div>
+                <div class="skill-card"><img src="img/mariadb-filled-.svg" alt="MariaDB"><span>MariaDB</span></div>
+                <div class="skill-card"><img src="img/phpmyadmin.png" alt="PhpMyAdmin"><span>PhpMyAdmin</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Skill-tools">
+        <div class="container">
+            <h2 class="section-title">Outils & Applications</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><img src="img/github.png" alt="Github"><span>GitHub</span></div>
+                <div class="skill-card"><img src="img/vscode.png" alt="VSCode"><span>VS Code</span></div>
+                <div class="skill-card"><img src="img/icons8-intellij-idea-48.png" alt="IntelliJ"><span>IntelliJ</span></div>
+                <div class="skill-card"><img src="img/ubuntu.png" alt="Ubuntu"><span>Ubuntu</span></div>
+                <div class="skill-card"><img src="img/figma.png" alt="Figma"><span>Figma</span></div>
+                <div class="skill-card"><img src="img/worldpress.png" alt="WordPress"><span>WordPress</span></div>
+                <div class="skill-card"><img src="img/trello.jpg" alt="Trello"><span>Trello</span></div>
+                <div class="skill-card"><img src="img/prestashop.png" alt="PrestaShop"><span>PrestaShop</span></div>
+                <div class="skill-card"><img src="img/spopify.png" alt="Shopify"><span>Shopify</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section id="Parcour">
+        <div class="container">
+            <div class="section-label">03 — Parcours</div>
+            <h2 class="section-title">Éducation & Expériences</h2>
+            <div class="timeline-grid">
+
+                <!-- EDUCATION -->
+                <div class="timeline-col">
+                    <h3 class="timeline-col-title">🎓 Éducation</h3>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024 – 2026</span>
+                            <h4>BTS SIO SLAM</h4>
+                            <p class="timeline-org">Lycée Leonard de Vinci — Melun</p>
+                            <p>Formation orientée développement d'applications. Projets en <strong>HTML, CSS, JavaScript, PHP, SQL, Python</strong>. Spécialisation gestion BDD et applications web.</p>
+                            <div class="tags"><span>SLAM</span><span>En cours</span></div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023 – 2024</span>
+                            <h4>Licence Sciences de l'Ingénieur</h4>
+                            <p class="timeline-org">Université Sorbonne Paris Nord — Villetaneuse</p>
+                            <p>Bases scientifiques et technologiques : <strong>mathématiques, informatique et logique scientifique</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020 – 2023</span>
+                            <h4>Baccalauréat Général</h4>
+                            <p class="timeline-org">Lycée Henri Wallon — Aubervilliers</p>
+                            <p>Spécialités <strong>Mathématiques & Physique-Chimie</strong>. Compétences en logique et résolution de problèmes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE -->
+                <div class="timeline-col">
+                    <h3 class="timeline-col-title">💼 Expériences</h3>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Jan – Fév 2026</span>
+                            <h4>Assistant E-commerce — Création de Sites Web</h4>
+                            <p class="timeline-org"><a href="https://ouesoagency.com/" target="_blank">Ouéso Agency</a> — Noisy-le-Grand</p>
+                            <ul>
+                                <li>Intégration de contenus sur PrestaShop, WordPress, Wix et Shopify</li>
+                                <li>Personnalisation templates et ajustements design</li>
+                                <li>Tests fonctionnels et optimisation UX</li>
+                            </ul>
+                            <div class="tags"><span>PrestaShop</span><span>Shopify</span><span>WordPress</span><span>Excel</span></div>
+                            <a href="#" class="timeline-link">Rapport de stage →</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Mai – Juin 2025</span>
+                            <h4>Développeur Web</h4>
+                            <p class="timeline-org">Barber Shop Norvegien 007</p>
+                            <ul>
+                                <li>Création d'un site vitrine responsive (HTML, CSS, JS)</li>
+                                <li>Formulaire de contact, galerie photo, tarifs dynamiques</li>
+                                <li>Mise en ligne via GitHub Pages</li>
+                            </ul>
+                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span></div>
+                            <div class="timeline-links">
+                                <a href="https://github.com/Josue4231/MonCoiffeurEnLigne.com" class="timeline-link" target="_blank">GitHub →</a>
+                                <a href="#" class="timeline-link">Rapport de stage →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Oct – Nov 2021</span>
+                            <h4>Assistant de gestion de rayon</h4>
+                            <p class="timeline-org">Franprix</p>
+                            <ul>
+                                <li>Mise en rayon et gestion des stocks</li>
+                                <li>Accueil et conseil clientèle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="Projects">
+        <div class="container">
+            <div class="section-label">04 — Projets</div>
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterProjects('all', this)">Tous</button>
+                <button class="filter-btn" onclick="filterProjects('ecole', this)">École</button>
+                <button class="filter-btn" onclick="filterProjects('perso', this)">Personnel</button>
+            </div>
+            <div class="projects-grid">
+
+                <div class="project-card ecole" data-cat="ecole">
+                    <div class="project-img-wrap">
+                        <a href="portfolio-detail.html"><img src="img/portfolio.png" alt="Portfolio Bootstrap"></a>
+                        <span class="project-tag">École</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="https://github.com/Josue4231/portfolio-sio" class="project-title" target="_blank">Portfolio Bootstrap</a>
+                        <p>Portfolio statique en <strong>Bootstrap 5</strong> avec Pelican. Navigation fluide et responsive, présentation de compétences et projets.</p>
+                        <div class="project-tags"><span>Bootstrap</span><span>HTML</span><span>CSS</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card perso" data-cat="perso">
+                    <div class="project-img-wrap">
+                        <a href="film-detail.html"><img src="img/film.png" alt="Films TMDb"></a>
+                        <span class="project-tag">Personnel</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="https://github.com/Josue4231/film" class="project-title" target="_blank">Films TMDb</a>
+                        <p>Application de recherche de films via l'API <strong>TMDb</strong>. Tri par genre, affiches, notes et résumés en temps réel.</p>
+                        <div class="project-tags"><span>JavaScript</span><span>API</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card perso" data-cat="perso">
+                    <div class="project-img-wrap">
+                        <a href="youtube-detail.html"><img src="img/anime youtube.png" alt="Recherche YouTube"></a>
+                        <span class="project-tag">Personnel</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="https://github.com/Josue4231/-Recherche-Chanson-Vid-o-YouTube" class="project-title" target="_blank">Recherche YouTube</a>
+                        <p>Application de recherche musicale avec intégration YouTube et création de playlists temporaires.</p>
+                        <div class="project-tags"><span>JavaScript</span><span>YouTube API</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card ecole" data-cat="ecole">
+                    <div class="project-img-wrap">
+                        <a href="kotlin-detail.html"><img src="img/kotlin123.png" alt="Kotlin Monster"></a>
+                        <span class="project-tag">École</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="https://github.com/Josue4231/kotlin-Monsters" class="project-title" target="_blank">Kotlin Monster</a>
+                        <p>Jeu d'aventure inspiré de Pokémon en <strong>Kotlin</strong> : capture, évolution, combats et exploration de zones.</p>
+                        <div class="project-tags"><span>Kotlin</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card ecole" data-cat="ecole">
+                    <div class="project-img-wrap">
+                        <a href="eurocatears-detail.html"><img src="img/Eurocoaters.png" alt="Eurocatears"></a>
+                        <span class="project-tag">École</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="https://github.com/Josue4231/Projet-Eurocatears" class="project-title" target="_blank">Projet Eurocatears</a>
+                        <p>Base de données sur les parcs et montagnes russes d'Europe. UML, SQL, <strong>MariaDB</strong>.</p>
+                        <div class="project-tags"><span>SQL</span><span>MariaDB</span><span>UML</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card perso" data-cat="perso">
+                    <div class="project-img-wrap">
+                        <a href="google.html" target="_blank"><img src="img/google.png" alt="Google Clone"></a>
+                        <span class="project-tag">Personnel</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="#" class="project-title">Google Clone</a>
+                        <p>Reproduction fidèle du moteur de recherche Google en <strong>HTML et CSS</strong> avec barre fonctionnelle.</p>
+                        <div class="project-tags"><span>HTML</span><span>CSS</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card ecole" data-cat="ecole">
+                    <div class="project-img-wrap">
+                        <img src="img/sav app.png" alt="Sav App">
+                        <span class="project-tag">École</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="https://github.com/Josue4231/Savon-api" class="project-title" target="_blank">SAV App — Angular</a>
+                        <p>Application front-end en <strong>Angular</strong> : architecture modulaire, gestion des routes, préparation API.</p>
+                        <div class="project-tags"><span>Angular</span><span>TypeScript</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card ecole" data-cat="ecole">
+                    <div class="project-img-wrap">
+                        <img src="img/Jogame.png" alt="JojGame">
+                        <span class="project-tag">École</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="https://github.com/Josue4231/projet-web-commerce-Jojgame-" class="project-title" target="_blank">JojGame — E-commerce</a>
+                        <p>Site e-commerce dédié aux jeux vidéo : panier, affichage produits dynamique, design responsive.</p>
+                        <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card perso" data-cat="perso">
+                    <div class="project-img-wrap">
+                        <img src="img/Movied.png" alt="Movie DB">
+                        <span class="project-tag">Personnel</span>
+                    </div>
+                    <div class="project-info">
+                        <a href="https://github.com/Josue4231/Projet-API-Movie-DB" class="project-title" target="_blank">Movie DB — PHP</a>
+                        <p>Application full-stack <strong>PHP + Bootstrap</strong> connectée à l'API TMDb. Recherche par titre, genre, acteur.</p>
+                        <div class="project-tags"><span>PHP</span><span>Bootstrap</span><span>API</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="Contact">
+        <div class="container">
+            <div class="section-label">05 — Contact</div>
+            <h2 class="section-title">Travaillons ensemble</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>Je suis à la recherche d'une <strong>alternance Bac+3</strong> à partir de la prochaine rentrée. N'hésitez pas à me contacter pour discuter d'une collaboration.</p>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/josu%C3%A9-kialengela-tazi/" target="_blank" class="contact-link">LinkedIn →</a>
+                        <a href="https://github.com/Josue4231" target="_blank" class="contact-link">GitHub →</a>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/xgoneowl" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom et prénom *</label>
+                            <input type="text" name="name" id="name" placeholder="Votre nom" minlength="3" maxlength="80" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" name="email" id="email" placeholder="votre@email.com" maxlength="50" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Votre message..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-solid">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVIS -->
+    <section id="avis">
+        <div class="container">
+            <div class="section-label">06 — Avis</div>
+            <h2 class="section-title">Votre avis sur mon portfolio</h2>
+            <div class="review-wrap">
+                <form class="contact-form review-form" action="https://formspree.io/f/xgoneowl" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="review-firstname">Prénom *</label>
+                            <input type="text" id="review-firstname" name="prenom" placeholder="Votre prénom">
+                        </div>
+                        <div class="form-group">
+                            <label for="review-lastname">Nom *</label>
+                            <input type="text" id="review-lastname" name="nom" placeholder="Votre nom">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="status">Vous êtes :</label>
+                            <select id="status" name="statut">
+                                <option>Étudiant</option><option>Développeur</option>
+                                <option>Recruteur</option><option>Employé</option><option>Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="note">Note :</label>
+                            <select id="note" name="note">
+                                <option>⭐</option><option>⭐⭐</option><option>⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐</option><option>⭐⭐⭐⭐⭐</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Entreprise / École</label>
+                        <input type="text" id="company" name="entreprise" placeholder="Nom de votre structure">
+                    </div>
+                    <div class="form-group">
+                        <label for="review-text">Votre avis</label>
+                        <textarea id="review-text" name="avis" rows="4" placeholder="Donnez votre avis sur mon portfolio..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-solid">Publier l'avis</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUSIQUE -->
+    <section id="musique">
+        <div class="container">
+            <div class="section-label">— Musique</div>
+            <h2 class="section-title">Ce que j'écoute</h2>
+            <div class="music-grid">
+                <div class="music-card">
+                    <img src="img/all in you.jpg" alt="All in You">
+                    <div class="music-info">
+                        <h3>All in You</h3>
+                        <span>Whois Taino</span>
+                        <a href="https://www.youtube.com/watch?v=RU76WwYkATw" target="_blank" class="btn btn-outline btn-sm">▶ Play</a>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="img/shiawase.jpg" alt="Shiawase">
+                    <div class="music-info">
+                        <h3>Shiawase</h3>
+                        <span>Dion Timmer</span>
+                        <a href="https://www.youtube.com/watch?v=N-V3zqvtbCM" target="_blank" class="btn btn-outline btn-sm">▶ Play</a>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="img/consume.jpg" alt="Consume">
+                    <div class="music-info">
+                        <h3>Consume</h3>
+                        <span>Bearky</span>
+                        <a href="https://www.youtube.com/watch?v=OQKN1Aqe69k" target="_blank" class="btn btn-outline btn-sm">▶ Play</a>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="img/blackclover.jpg" alt="Black Clover">
+                    <div class="music-info">
+                        <h3>Black Clover</h3>
+                        <span>Black Clover Op3</span>
+                        <a href="https://www.youtube.com/watch?v=dUiDZJMPh-s" target="_blank" class="btn btn-outline btn-sm">▶ Play</a>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="img/bad liar.jpg" alt="Bad Liar">
+                    <div class="music-info">
+                        <h3>Bad Liar</h3>
+                        <span>Imagine Dragons</span>
+                        <a href="https://www.youtube.com/watch?v=I-QfPUz1es8" target="_blank" class="btn btn-outline btn-sm">▶ Play</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span class="footer-name">Josué Kialengela-Tazi</span>
+            <span class="footer-copy">© 2025 — Tous droits réservés</span>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/josu%C3%A9-kialengela-tazi/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Josue4231" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter projects
+        function filterProjects(cat, btn) {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (cat === 'all' || card.dataset.cat === cat) {
+                    card.style.display = 'flex';
+                    setTimeout(() => card.style.opacity = '1', 10);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menuToggle')?.addEventListener('click', () => {
+            document.querySelector('.nav').classList.toggle('open');
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .project-card, .skill-card, .timeline-item').forEach(el => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

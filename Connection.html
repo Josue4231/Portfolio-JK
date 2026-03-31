@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion — Josué Kialengela</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0a0a;
+  --bg-2: #111111;
+  --bg-3: #1a1a1a;
+  --border: #2a2a2a;
+  --border-2: #3a3a3a;
+  --white: #f5f5f5;
+  --grey-1: #c8c8c8;
+  --grey-2: #8a8a8a;
+  --grey-3: #555555;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  width: 380px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.card-logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.card-sub {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--grey-3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey-3);
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder { color: var(--grey-3); }
+
+input:focus {
+  border-color: var(--border-2);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.04);
+}
+
+button {
+  width: 100%;
+  margin-top: 1.75rem;
+  padding: 0.9rem;
+  background: var(--white);
+  color: var(--bg);
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: var(--grey-1);
+  transform: translateY(-2px);
+}
+
+#error {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #e87070;
+  min-height: 1.2em;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--grey-3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--white); }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-logo">JK</div>
+  <div class="card-sub">Espace protégé</div>
+
+  <form id="loginForm">
+    <div class="form-group">
+      <label for="id">Identifiant</label>
+      <input type="text" id="id" placeholder="Votre identifiant" required>
+    </div>
+    <div class="form-group">
+      <label for="mdp">Mot de passe</label>
+      <input type="password" id="mdp" placeholder="••••••••" required>
+    </div>
+    <button type="submit">Se connecter</button>
+    <p id="error"></p>
+  </form>
+
+  <a href="index.html" class="back-link">← Retour au portfolio</a>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const id = document.getElementById("id").value;
+  const mdp = document.getElementById("mdp").value;
+  const err = document.getElementById("error");
+
+  if (id === "jojoboss" && mdp === "Vubpoc74") {
+    window.location.href = "veille.html";
+  } else {
+    err.textContent = "Identifiant ou mot de passe incorrect.";
+    document.querySelector('.card').style.animation = 'shake 0.3s ease';
+    setTimeout(() => document.querySelector('.card').style.animation = '', 400);
+  }
+});
+</script>
+</body>
+</html>
