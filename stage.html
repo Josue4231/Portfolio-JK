@@ -1,200 +1,712 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapport de Stage - Oueso Agency</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapport de Stage — Oueso Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-2: #111111;
+      --bg-3: #1a1a1a;
+      --bg-4: #222222;
+      --border: #2a2a2a;
+      --border-2: #3a3a3a;
+      --white: #f5f5f5;
+      --grey-1: #c8c8c8;
+      --grey-2: #8a8a8a;
+      --grey-3: #555555;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --container: 900px;
+      --accent: #c8a96e;
+      --accent-dim: rgba(200, 169, 110, 0.09);
+    }
 
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --bg-2: #111111;
-            --bg-3: #1a1a1a;
-            --bg-4: #222222;
-            --border: #2a2a2a;
-            --border-2: #3a3a3a;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-            --white: #f5f5f5;
-            --grey-1: #c8c8c8;
-            --grey-2: #8a8a8a;
-            --grey-3: #555555;
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
 
-            --accent: #e8e8e8;
-            --accent-dim: #404040;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-            --font-display: 'DM Serif Display', Georgia, serif;
-            --font-body: 'DM Sans', sans-serif;
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,10,0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      height: 56px; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-size: 13px; color: var(--grey-2); transition: color .2s; }
+    .nav-links a:hover { color: var(--white); text-decoration: none; }
 
-            --radius: 12px;
-            --radius-lg: 20px;
-            --container: 1000px;
-            --gap: 2rem;
-        }
+    /* ── HERO ── */
+    .hero {
+      margin-top: 56px;
+      padding: 72px 32px 56px;
+      max-width: var(--container);
+      margin-left: auto; margin-right: auto;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: end;
+    }
 
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--white);
-            font-family: var(--font-body);
-            line-height: 1.6;
-        }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 14px;
+    }
 
-        .container {
-            max-width: var(--container);
-            margin: auto;
-            padding: 2rem;
-        }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5.5vw, 54px);
+      font-weight: 400; line-height: 1.06;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
 
-        h1, h2, h3 {
-            font-family: var(--font-display);
-        }
+    .hero-desc {
+      font-size: 15px; color: var(--grey-2);
+      max-width: 480px; line-height: 1.65;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+    .hero-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .hero-meta-item { margin-bottom: 10px; }
+    .hero-meta-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--grey-3); margin-bottom: 2px;
+    }
+    .hero-meta-value { font-size: 13px; color: var(--grey-1); font-weight: 500; }
 
-        h2 {
-            margin-top: 2rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
+    /* ── MAIN ── */
+    .main {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 32px 80px;
+    }
 
-        h3 {
-            margin-top: 1.5rem;
-        }
+    /* ── TAGS ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 32px 0 0; }
+    .tag {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px; border-radius: 4px;
+      border: 1px solid var(--border-2);
+      color: var(--grey-2); background: var(--bg-3);
+    }
+    .tag.accent {
+      border-color: rgba(200,169,110,0.35);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
 
-        .card {
-            background: var(--bg-2);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-        }
+    /* ── KPI BAR ── */
+    .kpi-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; margin: 40px 0 48px;
+    }
+    .kpi {
+      padding: 20px 22px;
+      border-right: 1px solid var(--border);
+    }
+    .kpi:last-child { border-right: none; }
+    .kpi-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--grey-3); margin-bottom: 6px;
+    }
+    .kpi-value {
+      font-family: var(--font-display);
+      font-size: 22px; color: var(--white);
+    }
 
-        ul {
-            padding-left: 1.2rem;
-        }
+    /* ── SECTION ── */
+    .section { margin-bottom: 52px; }
 
-        li {
-            margin-bottom: 0.5rem;
-        }
+    .section-header {
+      display: flex; align-items: baseline; gap: 14px;
+      margin-bottom: 22px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      font-size: 11px; color: var(--grey-3); font-weight: 500;
+      letter-spacing: 0.05em; font-variant-numeric: tabular-nums;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 22px; font-weight: 400;
+      letter-spacing: -0.01em;
+    }
 
-        .title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+    /* ── CARDS ── */
+    .card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
 
-        .title p {
-            color: var(--grey-2);
-        }
+    .card p { color: var(--grey-1); line-height: 1.75; }
+    .card p + p { margin-top: 10px; }
 
-        .tag {
-            display: inline-block;
-            padding: 0.3rem 0.6rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: var(--grey-2);
-            margin-right: 0.3rem;
-        }
-    </style>
+    /* Accent card */
+    .card-accent {
+      position: relative; overflow: hidden;
+    }
+    .card-accent::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--accent);
+    }
+
+    /* ── ENTREPRISE CARD ── */
+    .entreprise-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .info-row { display: flex; flex-direction: column; gap: 4px; }
+    .info-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--grey-3);
+    }
+    .info-value { font-size: 14px; color: var(--grey-1); font-weight: 500; }
+
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: grid; grid-template-columns: 48px 1fr;
+      gap: 20px; padding-bottom: 28px;
+      position: relative;
+    }
+    .step:last-child { padding-bottom: 0; }
+    .step::after {
+      content: '';
+      position: absolute;
+      left: 23px; top: 40px; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+    .step:last-child::after { display: none; }
+
+    .step-num {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--bg-3);
+      border: 1px solid var(--border-2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px; color: var(--grey-2);
+      flex-shrink: 0; position: relative; z-index: 1;
+      transition: border-color .2s, color .2s;
+    }
+    .step:hover .step-num {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .step-body {}
+    .step-title {
+      font-size: 15px; font-weight: 600; color: var(--white);
+      margin-bottom: 5px; margin-top: 12px;
+    }
+    .step-desc { font-size: 14px; color: var(--grey-2); line-height: 1.65; }
+
+    /* ── TOOLS GRID ── */
+    .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .tool-card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 20px;
+      display: flex; gap: 14px; align-items: flex-start;
+      transition: border-color .2s;
+    }
+    .tool-card:hover { border-color: var(--border-2); }
+    .tool-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(200,169,110,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .tool-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .tool-desc { font-size: 12.5px; color: var(--grey-2); line-height: 1.5; }
+
+    /* ── LISTE ── */
+    .styled-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .styled-list li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 14px; color: var(--grey-1); line-height: 1.6;
+    }
+    .styled-list li::before {
+      content: '';
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    /* ── DIFFICULTES ── */
+    .diff-list { display: flex; flex-direction: column; gap: 10px; }
+    .diff-item {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 16px;
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 14px; color: var(--grey-1); line-height: 1.6;
+    }
+    .diff-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(200,169,110,.5); flex-shrink: 0; margin-top: 7px;
+    }
+
+    /* ── APPRENTISSAGES ── */
+    .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .learn-card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 20px;
+      transition: border-color .2s;
+    }
+    .learn-card:hover { border-color: rgba(200,169,110,.25); }
+    .learn-icon { font-size: 20px; margin-bottom: 10px; }
+    .learn-title { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .learn-desc { font-size: 12.5px; color: var(--grey-2); line-height: 1.5; }
+
+    /* ── BILAN ── */
+    .bilan-card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 32px 36px;
+      position: relative; overflow: hidden;
+    }
+    .bilan-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+    }
+    .bilan-quote {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--white);
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .bilan-body { font-size: 14px; color: var(--grey-2); line-height: 1.7; }
+    .bilan-body + .bilan-body { margin-top: 10px; }
+
+    /* ── COMPÉTENCES BTS ── */
+    .comp-table { width: 100%; border-collapse: collapse; }
+    .comp-table thead tr { background: var(--bg-3); }
+    .comp-table th {
+      padding: 11px 14px; text-align: left;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--grey-3);
+      border-bottom: 1px solid var(--border);
+    }
+    .comp-table td {
+      padding: 13px 14px; border-bottom: 1px solid var(--border);
+      vertical-align: top; color: var(--grey-1);
+      font-size: 13.5px; line-height: 1.5;
+    }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table tbody tr { background: var(--bg-2); transition: background .15s; }
+    .comp-table tbody tr:hover { background: var(--bg-3); }
+    .comp-code {
+      font-family: 'Courier New', monospace;
+      font-size: 11.5px; font-weight: 700;
+      color: var(--accent); background: var(--accent-dim);
+      padding: 2px 6px; border-radius: 4px;
+      border: 1px solid rgba(200,169,110,.15); display: inline-block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 32px;
+      max-width: var(--container); margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: var(--grey-3);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 60px 20px 40px; }
+      .hero-meta { text-align: left; display: flex; gap: 20px; flex-wrap: wrap; }
+      .main { padding: 0 20px 60px; }
+      .kpi-bar { grid-template-columns: 1fr 1fr; }
+      .kpi:nth-child(2) { border-right: none; }
+      .entreprise-grid, .tools-grid, .learn-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">JK</span>
+  <div class="nav-links">
+    <a href="#entreprise">Entreprise</a>
+    <a href="#travail">Missions</a>
+    <a href="#competences">Compétences</a>
+    <a href="#bilan">Bilan</a>
+  </div>
+</nav>
 
-    <div class="title">
-        <h1>Rapport de Stage</h1>
-        <p>BTS SIO - Option SLAM</p>
-        <span class="tag">Développement Web</span>
-        <span class="tag">E-commerce</span>
+<!-- HERO -->
+<div class="hero" style="margin-top:56px">
+  <div>
+    <p class="hero-eyebrow">Rapport de stage — BTS SIO SLAM</p>
+    <h1>Stage chez <em>Oueso Agency</em></h1>
+    <p class="hero-desc">Gestion de contenu e-commerce et maintenance de site web en production pour une agence spécialisée dans la création et la gestion de solutions numériques.</p>
+    <div class="tags" style="margin-top:24px">
+      <span class="tag accent">E-commerce</span>
+      <span class="tag accent">PrestaShop</span>
+      <span class="tag">Développement web</span>
+      <span class="tag">Gestion de contenu</span>
     </div>
-
-    <div class="card">
-        <h2>Présentation de l'entreprise</h2>
-        <p>J'ai effectué mon stage au sein de l'entreprise Oueso Agency, une agence spécialisée dans la création, la gestion et la maintenance de sites web. Elle accompagne des clients dans la mise en place de solutions e-commerce et de contenus numériques.</p>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Période</div>
+      <div class="hero-meta-value">Jan – Fév 2026</div>
     </div>
-
-    <div class="card">
-        <h2>Contexte du stage</h2>
-        <p>Dans le cadre de mon BTS SIO option SLAM, ce stage avait pour objectif de me faire découvrir le fonctionnement réel d’un site e-commerce en production et de participer à sa maintenance quotidienne.</p>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Lieu</div>
+      <div class="hero-meta-value">Noisy-le-Grand</div>
     </div>
-
-    <div class="card">
-        <h2>Objectifs du stage</h2>
-        <ul>
-            <li>Ajouter de nouveaux produits (affiches)</li>
-            <li>Modifier les prix et informations produits</li>
-            <li>Maintenir le site à jour</li>
-            <li>Supprimer et remplacer certains articles</li>
-            <li>Améliorer l'organisation des contenus</li>
-        </ul>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Formation</div>
+      <div class="hero-meta-value">BTS SIO SLAM</div>
     </div>
-
-    <div class="card">
-        <h2>Outils utilisés</h2>
-        <ul>
-            <li>PrestaShop (gestion e-commerce)</li>
-            <li>Byfunky (organisation des données)</li>
-            <li>Google Drive (ressources images)</li>
-            <li>Site web oueso.com (production)</li>
-        </ul>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Lycée</div>
+      <div class="hero-meta-value">Léonard de Vinci</div>
     </div>
-
-    <div class="card">
-        <h2>Travail réalisé</h2>
-
-        <h3>1. Récupération des données</h3>
-        <p>J'ai récupéré les images des produits depuis un dossier Google Drive fourni par mon supérieur. Ces images étaient essentielles pour alimenter le catalogue du site.</p>
-
-        <h3>2. Organisation des produits</h3>
-        <p>J'ai ensuite structuré les informations sous forme de tableau sur Byfunky en ajoutant les éléments suivants : nom du produit, prix, URL et image associée.</p>
-
-        <h3>3. Intégration sur PrestaShop</h3>
-        <p>J'ai intégré les produits sur PrestaShop en ajoutant les descriptions, les images et en modifiant les prix selon les consignes données.</p>
-
-        <h3>4. Mise en ligne</h3>
-        <p>Après vérification, les produits ont été publiés sur le site officiel oueso.com.</p>
-
-        <h3>5. Maintenance du site</h3>
-        <p>J'ai également supprimé certains anciens articles et les ai remplacés par de nouveaux produits afin de garder le site à jour.</p>
-    </div>
-
-    <div class="card">
-        <h2>Difficultés rencontrées</h2>
-        <ul>
-            <li>Certains produits étaient déjà présents sur le site mais difficiles à retrouver à cause de l’absence de barre de recherche efficace.</li>
-            <li>J’ai dû parcourir manuellement plusieurs pages pour identifier les produits à modifier ou dupliquer.</li>
-            <li>Certains visuels étaient mal nommés ou peu clairs, ce qui compliquait leur identification.</li>
-            <li>La duplication de produits dans PrestaShop demandait beaucoup de rigueur pour éviter les erreurs.</li>
-            <li>Travailler sur un site déjà en ligne demandait une grande attention pour éviter de casser des éléments visibles par les utilisateurs.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Ce que j’ai appris</h2>
-        <ul>
-            <li>Comprendre le fonctionnement d’un site e-commerce en production</li>
-            <li>Utiliser PrestaShop pour gérer des produits</li>
-            <li>Organiser des données de manière structurée et efficace</li>
-            <li>Travailler avec des outils professionnels utilisés en entreprise</li>
-            <li>Gérer des modifications sur un site déjà en ligne sans perturber son fonctionnement</li>
-            <li>Développer ma rigueur et mon sens de l’organisation</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Bilan du stage</h2>
-        <p>Ce stage m’a permis de découvrir concrètement le métier de gestionnaire de contenu web dans un environnement e-commerce. J’ai pu développer des compétences techniques mais aussi organisationnelles. J’ai appris à être plus rigoureux, à mieux gérer les priorités et à travailler sur un site réel utilisé par des utilisateurs.</p>
-    </div>
-
-    <div class="card">
-        <h2>Conclusion</h2>
-        <p>Cette expérience au sein de Oueso Agency a été très enrichissante. Elle m’a permis de comprendre les enjeux de la maintenance d’un site web professionnel et de confirmer mon intérêt pour le développement web et la gestion de projets numériques.</p>
-    </div>
-
+  </div>
 </div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- KPI -->
+  <div class="kpi-bar">
+    <div class="kpi">
+      <div class="kpi-label">Durée</div>
+      <div class="kpi-value">6 semaines</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Plateforme</div>
+      <div class="kpi-value">PrestaShop</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Type</div>
+      <div class="kpi-value">E-commerce</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Statut</div>
+      <div class="kpi-value" style="color:#7dcea0">✓ Validé</div>
+    </div>
+  </div>
+
+  <!-- 01 — Présentation entreprise -->
+  <div class="section" id="entreprise">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Présentation de l'entreprise</h2>
+    </div>
+    <div class="card card-accent" style="margin-bottom:16px">
+      <p><strong style="color:var(--white)">Oueso Agency</strong> est une agence spécialisée dans la création, la gestion et la maintenance de sites web. Elle accompagne des clients dans la mise en place de solutions e-commerce et de contenus numériques, en intervenant aussi bien sur la conception que sur la vie courante des plateformes en ligne.</p>
+      <p>L'agence travaille avec des outils reconnus du marché (PrestaShop, WordPress, Shopify, Wix) et gère des sites actifs utilisés quotidiennement par des clients finaux, ce qui implique une rigueur importante lors de toute intervention en production.</p>
+    </div>
+    <div class="entreprise-grid" style="margin-top:16px">
+      <div class="card">
+        <div class="info-row" style="margin-bottom:14px">
+          <span class="info-label">Nom</span>
+          <span class="info-value">Oueso Agency</span>
+        </div>
+        <div class="info-row" style="margin-bottom:14px">
+          <span class="info-label">Site web</span>
+          <span class="info-value"><a href="https://ouesoagency.com" target="_blank">ouesoagency.com</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Domaine</span>
+          <span class="info-value">Agence web & E-commerce</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info-row" style="margin-bottom:14px">
+          <span class="info-label">Localisation</span>
+          <span class="info-value">Noisy-le-Grand, Île-de-France</span>
+        </div>
+        <div class="info-row" style="margin-bottom:14px">
+          <span class="info-label">Activité principale</span>
+          <span class="info-value">Création & maintenance de sites web</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Secteur</span>
+          <span class="info-value">Numérique / Prestation de services</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 — Contexte et objectifs -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Contexte et objectifs</h2>
+    </div>
+    <div class="card card-accent">
+      <p>Dans le cadre de mon <strong style="color:var(--white)">BTS SIO option SLAM</strong>, ce stage avait pour objectif de me faire découvrir le fonctionnement réel d'un site e-commerce en production et de participer activement à sa maintenance quotidienne.</p>
+      <p>Il s'agissait d'une immersion professionnelle concrète, me permettant de confronter les compétences techniques acquises en cours aux réalités du terrain : travailler sur un site réel, en production, avec de vraies contraintes (délais, qualité, continuité de service).</p>
+    </div>
+    <div style="margin-top:14px">
+      <div class="card">
+        <p style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:12px;">Objectifs principaux du stage</p>
+        <ul class="styled-list">
+          <li>Ajouter de nouveaux produits (affiches) avec visuels, descriptions et prix</li>
+          <li>Modifier les informations et tarifs des produits existants</li>
+          <li>Supprimer les articles obsolètes et les remplacer par de nouveaux</li>
+          <li>Maintenir le site à jour en continu et sans interruption de service</li>
+          <li>Améliorer l'organisation et la lisibilité du catalogue en ligne</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 — Outils -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Outils utilisés</h2>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon">🛒</div>
+        <div>
+          <div class="tool-name">PrestaShop</div>
+          <div class="tool-desc">CMS e-commerce pour la gestion des produits, des catégories, des prix et de la publication en ligne.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">📋</div>
+        <div>
+          <div class="tool-name">Byfunky</div>
+          <div class="tool-desc">Outil de structuration et d'organisation des données produits sous forme de tableaux (nom, prix, URL, image).</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">☁️</div>
+        <div>
+          <div class="tool-name">Google Drive</div>
+          <div class="tool-desc">Stockage et partage des ressources images produits mis à disposition par le responsable de stage.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🌐</div>
+        <div>
+          <div class="tool-name">oueso.com (production)</div>
+          <div class="tool-desc">Site web officiel en production — toutes les modifications sont immédiatement visibles par les utilisateurs finaux.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 — Travail réalisé -->
+  <div class="section" id="travail">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Missions réalisées</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Récupération des ressources</div>
+          <div class="step-desc">Téléchargement des visuels produits depuis un dossier Google Drive fourni par le responsable. Identification et tri des images selon les références produits à intégrer.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Organisation des données produits</div>
+          <div class="step-desc">Structuration des informations dans Byfunky sous forme de tableau : nom du produit, prix, URL de la page et image associée. Cette étape a permis d'avoir une vision claire avant l'intégration.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Intégration sur PrestaShop</div>
+          <div class="step-desc">Ajout des produits dans le back-office PrestaShop : saisie des descriptions, import des images haute résolution, configuration des prix selon les consignes. Vérification de la cohérence des données à chaque étape.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Publication et vérification</div>
+          <div class="step-desc">Mise en ligne des produits après validation. Contrôle de l'affichage sur le site en conditions réelles : vérification des images, des prix, de la mise en page et du bon fonctionnement de chaque fiche produit.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Maintenance continue</div>
+          <div class="step-desc">Suppression des anciens articles obsolètes et remplacement par les nouvelles références. Mise à jour permanente du catalogue pour garder le site actuel et cohérent.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 — Difficultés -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Difficultés rencontrées</h2>
+    </div>
+    <div class="diff-list">
+      <div class="diff-item">
+        <div class="diff-dot"></div>
+        <span>Absence de barre de recherche efficace dans PrestaShop, rendant difficile la localisation de certains produits déjà présents — nécessitant un parcours manuel des pages.</span>
+      </div>
+      <div class="diff-item">
+        <div class="diff-dot"></div>
+        <span>Certains visuels étaient mal nommés ou peu descriptifs, compliquant leur identification et leur association aux bons produits.</span>
+      </div>
+      <div class="diff-item">
+        <div class="diff-dot"></div>
+        <span>La duplication de produits dans PrestaShop demandait une grande rigueur pour éviter les doublons, les erreurs de prix ou les incohérences dans le catalogue.</span>
+      </div>
+      <div class="diff-item">
+        <div class="diff-dot"></div>
+        <span>Travailler directement sur un site en production imposait une vigilance accrue — toute erreur était immédiatement visible par les utilisateurs finaux.</span>
+      </div>
+      <div class="diff-item">
+        <div class="diff-dot"></div>
+        <span>Gestion du volume : le nombre de produits à intégrer ou modifier était important, nécessitant une organisation et une méthode de travail efficaces pour ne rien oublier.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 — Compétences BTS -->
+  <div class="section" id="competences">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Compétences BTS SIO mobilisées</h2>
+    </div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th style="width:90px">Code</th>
+          <th style="width:200px">Compétence</th>
+          <th>Mise en œuvre durant le stage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="comp-code">B1.1</span></td>
+          <td style="color:var(--white);font-weight:500;font-size:13px">Recenser et identifier les ressources numériques</td>
+          <td>Identification et exploitation des ressources (images, données) via Google Drive et Byfunky pour alimenter le catalogue.</td>
+        </tr>
+        <tr>
+          <td><span class="comp-code">B1.3</span></td>
+          <td style="color:var(--white);font-weight:500;font-size:13px">Développer la présence en ligne</td>
+          <td>Mise en ligne et mise à jour de produits sur un site e-commerce réel utilisé par des clients, optimisation du catalogue.</td>
+        </tr>
+        <tr>
+          <td><span class="comp-code">B2.1</span></td>
+          <td style="color:var(--white);font-weight:500;font-size:13px">Exploiter les ressources du poste de travail</td>
+          <td>Utilisation de PrestaShop (back-office), Byfunky, Google Drive et du navigateur dans un environnement professionnel.</td>
+        </tr>
+        <tr>
+          <td><span class="comp-code">B3.2</span></td>
+          <td style="color:var(--white);font-weight:500;font-size:13px">Gérer le patrimoine informatique</td>
+          <td>Maintenance du catalogue (ajout, mise à jour, suppression d'articles), préservation de la cohérence des données produits.</td>
+        </tr>
+        <tr>
+          <td><span class="comp-code">B5.1</span></td>
+          <td style="color:var(--white);font-weight:500;font-size:13px">Mettre en place et exploiter des solutions</td>
+          <td>Exploitation d'une solution e-commerce (PrestaShop) en conditions réelles, gestion des contraintes d'un site en production.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 07 — Apprentissages -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Apprentissages</h2>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-card">
+        <div class="learn-icon">🛒</div>
+        <div class="learn-title">PrestaShop en production</div>
+        <div class="learn-desc">Maîtrise du back-office PrestaShop pour la gestion complète d'un catalogue e-commerce en conditions réelles.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">⚙️</div>
+        <div class="learn-title">Rigueur en production</div>
+        <div class="learn-desc">Apprendre à intervenir sur un site actif sans perturber le service — vigilance et méthode à chaque modification.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">📂</div>
+        <div class="learn-title">Organisation des données</div>
+        <div class="learn-desc">Structuration efficace des informations produits avant intégration pour gagner en rapidité et réduire les erreurs.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">🏢</div>
+        <div class="learn-title">Environnement professionnel</div>
+        <div class="learn-desc">Découverte des outils et des pratiques d'une agence web : communication, délais, outils collaboratifs.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">🔄</div>
+        <div class="learn-title">Cycle de vie d'un site</div>
+        <div class="learn-desc">Comprendre que la mise en ligne n'est qu'un début — la maintenance et les mises à jour sont une tâche permanente.</div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">🎯</div>
+        <div class="learn-title">Sens des priorités</div>
+        <div class="learn-desc">Gestion de plusieurs produits simultanément, hiérarchisation des tâches selon les consignes et les délais donnés.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08 — Bilan -->
+  <div class="section" id="bilan">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Bilan & conclusion</h2>
+    </div>
+    <div class="bilan-card">
+      <p class="bilan-quote">"Une immersion concrète dans les réalités d'un site e-commerce en production."</p>
+      <p class="bilan-body">Ce stage au sein de <strong style="color:var(--white)">Oueso Agency</strong> m'a permis de découvrir concrètement le métier de gestionnaire de contenu web dans un environnement e-commerce professionnel. Au-delà des compétences techniques acquises sur PrestaShop et les outils associés, j'ai développé des qualités essentielles en entreprise : rigueur, organisation et sens des responsabilités.</p>
+      <p class="bilan-body">Travailler directement sur un site en production, utilisé par de vrais clients, a été la principale valeur ajoutée de cette expérience. Chaque action avait un impact immédiat, ce qui m'a appris à anticiper les risques, à vérifier avant de valider et à communiquer efficacement avec mon responsable.</p>
+      <p class="bilan-body">Cette expérience confirme mon intérêt pour le développement web et la gestion de projets numériques, et renforce ma motivation pour poursuivre en <strong style="color:var(--white)">alternance Bac+3</strong> dans le domaine du développement web et de l'UX/UI.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>BTS SIO SLAM — Josué Kialengela-Tazi — 2024/2026</span>
+  <span>Stage — Oueso Agency · Jan–Fév 2026</span>
+</footer>
 
 </body>
 </html>
